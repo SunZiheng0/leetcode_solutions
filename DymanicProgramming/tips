@@ -1,0 +1,25 @@
+dp 问题特征： 任何情况都可以做n个有限选择，然后得到有限个子问题
+子问题也是求最优解，并且相互有重叠
+
+712. Minimum ASCII Delete Sum for Two Strings
+ Non-Base case
+
+ Of the two strings, if both of their last characters match then certainly the answer comes from skipping those characters.
+ i.e. Answer("zca","bza") = Answer("zc","bz")
+
+ Hence the 2nd rule: dp[i][j] =
+
+     dp[i-1][j-1] -> if s1[i]==s2[j]
+
+ Finally, if the last characters are different then its one of the three situations:
+
+     drop s1's last character (ASCII(s1's last) + dp[i-1][j])
+     drop s2's last character (ASCII(s2's last) + dp[i][j-1])
+     drop both last characters (ASCII(s1's last) + ASCII(s2's last) + dp[i-1[[j-1])
+
+ Hence the 3rd rule: dp[i][j] =
+
+     Min((ASCII(s1's last) + dp[i-1][j]),(ASCII(s2's last) + dp[i][j-1]),(ASCII(s1's last) + ASCII(s2's last) + dp[i-1[[j-1]))
+
+
+ 有意识去构造才是重心，所谓做选择，可以在现有条件中减少一步，构成子问题

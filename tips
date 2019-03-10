@@ -1,0 +1,16 @@
+1. << 运算符 低于 + -
+3 << 1 + 5  == 3 << 6
+(3 << 1) + 5 == 3 * 2 + 5
+
+2.572. Subtree of Another Tree
+树里面有重复值，或者不是查找树，子树跟根节点没关系
+
+3.  993. Cousins in Binary Tree
+又犯了把树当成查找树的错误。应该默认非查找树
+
+4.sort 是 O(n*logn)
+如果遇到O(n*n) 甚至 O(n**3) 算法，可以先排序，再用 O(n) O(n*logn) 算法求解
+
+5.特殊情况是一定存在的，每次都要检查
+int[] nums : nums.length == 0  // 不是null， 有地址，没有值
+TreeNode root : root == null
